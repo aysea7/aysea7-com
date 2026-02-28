@@ -1,339 +1,70 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="aysea7 - choose your preferred music service" />
-  <title>aysea7</title>
 
-  <style>
-    :root{
-      --bg: #0b0b0c;
-      --card: rgba(255,255,255,.06);
-      --card2: rgba(255,255,255,.08);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.68);
-      --stroke: rgba(255,255,255,.14);
-      --shadow: 0 18px 55px rgba(0,0,0,.55);
-      --radius: 18px;
-      --radius2: 16px;
-      --w: 520px;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      color:var(--text);
-      font: 16px/1.45 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background:
-        radial-gradient(900px 520px at 10% 0%, rgba(255,255,255,.09), transparent 55%),
-        radial-gradient(800px 520px at 90% 0%, rgba(255,255,255,.06), transparent 55%),
-        radial-gradient(700px 500px at 50% 115%, rgba(255,255,255,.06), transparent 60%),
-        var(--bg);
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
-      padding: 32px 16px 80px;
-    }
+<title>aysea7</title>
 
-    .wrap{ width:min(var(--w), 100%); }
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
 
-    .card{
-      border:1px solid var(--stroke);
-      background: linear-gradient(180deg, var(--card), rgba(255,255,255,.04));
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-      overflow:hidden;
-    }
+<link rel="stylesheet" href="/static/assets/css/styles.css">
 
-    .hero{
-      padding: 26px 22px 18px;
-      position:relative;
-    }
-
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:-120px -120px auto -120px;
-      height:260px;
-      background:
-        radial-gradient(closest-side at 22% 32%, rgba(255,255,255,.14), transparent 62%),
-        radial-gradient(closest-side at 72% 18%, rgba(255,255,255,.10), transparent 65%);
-      filter: blur(2px);
-      pointer-events:none;
-    }
-
-    .profile{
-      position:relative;
-      display:flex;
-      gap:14px;
-      align-items:center;
-    }
-
-    .avatar{
-      width:66px;
-      height:66px;
-      border-radius: 20px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.06);
-      flex: 0 0 auto;
-    }
-    .avatar img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    h1{
-      margin:0;
-      font-size: 22px;
-      letter-spacing: .2px;
-    }
-
-    .subtitle{
-      margin-top:4px;
-      color: var(--muted);
-      font-size: 13.5px;
-    }
-
-    .links{
-      padding: 4px 16px 16px;
-    }
-
-    .btn{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      width:100%;
-      text-decoration:none;
-      color: var(--text);
-      background: #000;
-      border:1px solid rgba(255,255,255,.12);
-      border-radius: var(--radius2);
-      padding: 14px 14px;
-      margin: 10px 0;
-      transition: transform .12s ease, border-color .12s ease, background .12s ease;
-      will-change: transform;
-    }
-
-    .btn:hover{
-      transform: translateY(-1px);
-      border-color: rgba(255,255,255,.22);
-      background: #050505;
-    }
-
-    .btn:active{
-      transform: translateY(0px) scale(.995);
-    }
-
-    .icon{
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      background: rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.14);
-      display:grid;
-      place-items:center;
-      flex: 0 0 auto;
-      overflow:hidden;
-    }
-
-    .icon img{
-      width: 22px;
-      height: 22px;
-      display:block;
-      filter: drop-shadow(0 1px 0 rgba(0,0,0,.25));
-    }
-
-    .btn .text{
-      min-width:0;
-      flex:1;
-    }
-
-    .btn .title{
-      font-weight: 650;
-      font-size: 14.5px;
-      margin: 0;
-      line-height: 1.15;
-    }
-
-    .btn .meta{
-      margin: 4px 0 0;
-      color: rgba(255,255,255,.60);
-      font-size: 12.5px;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      white-space:nowrap;
-    }
-
-    .chev{
-      width: 28px;
-      height: 28px;
-      border-radius: 10px;
-      display:grid;
-      place-items:center;
-      color: rgba(255,255,255,.75);
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.06);
-      flex: 0 0 auto;
-    }
-
-    .footer{
-      margin-top: 14px;
-      text-align:center;
-      color: rgba(255,255,255,.55);
-      font-size: 12px;
-    }
-
-    .footer a{
-      color: rgba(255,255,255,.72);
-      text-decoration:none;
-      border-bottom: 1px dotted rgba(255,255,255,.28);
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      .btn{ transition:none; }
-      .btn:hover{ transform:none; }
-    }
-  </style>
 </head>
 
 <body>
-  <main class="wrap">
-    <section class="card" aria-label="aysea7 links">
-      <header class="hero">
-        <div class="profile">
-          <div class="avatar" aria-hidden="true">
-            <img src="https://bio.linkcdn.cc/20201107/08352073360" alt="aysea7 avatar" />
-          </div>
-          <div>
-            <h1>aysea7</h1>
-            <div class="subtitle">choose your preferred music service</div>
-          </div>
-        </div>
-      </header>
+<div class="crt-screen">
+<div id="crtBoot">
+    <div class="crt-line"></div>
+</div>
 
-      <div class="links">
-        <!-- Spotify Playlist -->
-        <a class="btn" href="https://open.spotify.com/playlist/4GV18V0pifJXvtqIp5CQWq?si=ONatVcnKSLeO1j-1uGcJtw&utm_source=copy-link" target="_blank" rel="noopener">
-          <span class="icon" aria-hidden="true">
-            <img src="https://bio.linkcdn.cc/bio/links/icons/music/spotify.png" alt="" />
-          </span>
-          <span class="text">
-            <p class="title">Spotify Playlist</p>
-            <p class="meta">open.spotify.com/playlist/4GV18V0pifJXvtqIp5CQWq</p>
-          </span>
-          <span class="chev" aria-hidden="true">›</span>
-        </a>
+<button id="themeToggle" class="theme-toggle">◐</button>
 
-        <!-- Telegram Channel -->
-        <a class="btn" href="https://t.me/joinchat/sFyzrAjLVXgwNmJi" target="_blank" rel="noopener">
-          <span class="icon" aria-hidden="true">
-            <img src="https://bio.linkcdn.cc/bio/links/icons/social/telegram.png" alt="" />
-          </span>
-          <span class="text">
-            <p class="title">Telegram Channel</p>
-            <p class="meta">t.me/joinchat/sFyzrAjLVXgwNmJi</p>
-          </span>
-          <span class="chev" aria-hidden="true">›</span>
-        </a>
+<header class="header">
 
-        <!-- SoundCloud -->
-        <a class="btn" href="https://soundcloud.com/aysea7?ref=clipboard&p=a&c=1" target="_blank" rel="noopener">
-          <span class="icon" aria-hidden="true">
-            <img src="https://bio.linkcdn.cc/bio/links/icons/music/soundcloud.png" alt="" />
-          </span>
-          <span class="text">
-            <p class="title">SoundCloud</p>
-            <p class="meta">soundcloud.com/aysea7</p>
-          </span>
-          <span class="chev" aria-hidden="true">›</span>
-        </a>
+<h1 class="logo" id="logo">
+aysea7
+</h1>
 
-        <!-- YouTube -->
-        <a class="btn" href="https://www.youtube.com/channel/UCrTgGOqtcq4HHlzxFR8wWcw" target="_blank" rel="noopener">
-          <span class="icon" aria-hidden="true">
-            <img src="https://bio.linkcdn.cc/bio/links/icons/social/youtube.png" alt="" />
-          </span>
-          <span class="text">
-            <p class="title">YouTube</p>
-            <p class="meta">youtube.com/channel/UCrTgGOqtcq4HHlzxFR8wWcw</p>
-          </span>
-          <span class="chev" aria-hidden="true">›</span>
-        </a>
+</header>
 
-        <!-- Spotify (Album) -->
-        <a class="btn" href="https://open.spotify.com/album/62h4tvm6ig4txTgcPVkgJU" target="_blank" rel="noopener">
-          <span class="icon" aria-hidden="true">
-            <img src="https://bio.linkcdn.cc/bio/links/icons/music/spotify.png" alt="" />
-          </span>
-          <span class="text">
-            <p class="title">Spotify</p>
-            <p class="meta">open.spotify.com/album/62h4tvm6ig4txTgcPVkgJU</p>
-          </span>
-          <span class="chev" aria-hidden="true">›</span>
-        </a>
+<main class="page">
 
-        <!-- Deezer -->
-        <a class="btn" href="https://www.deezer.com/album/144393102" target="_blank" rel="noopener">
-          <span class="icon" aria-hidden="true">
-            <img src="https://bio.linkcdn.cc/bio/links/icons/music/deezer.png" alt="" />
-          </span>
-          <span class="text">
-            <p class="title">Deezer</p>
-            <p class="meta">deezer.com/album/144393102</p>
-          </span>
-          <span class="chev" aria-hidden="true">›</span>
-        </a>
+<section class="links">
 
-        <!-- iTunes / Apple Music -->
-        <a class="btn" href="https://itunes.apple.com/album/id1506802597" target="_blank" rel="noopener">
-          <span class="icon" aria-hidden="true">
-            <img src="https://bio.linkcdn.cc/20201107/08480546910" alt="" />
-          </span>
-          <span class="text">
-            <p class="title">iTunes</p>
-            <p class="meta">itunes.apple.com/album/id1506802597</p>
-          </span>
-          <span class="chev" aria-hidden="true">›</span>
-        </a>
+<a class="link" href="https://open.spotify.com/playlist/4GV18V0pifJXvtqIp5CQWq?si=ONatVcnKSLeO1j-1uGcJtw&utm_source=copy-link" target="_blank">spotify playlist</a>
 
-        <!-- Instagram -->
-        <a class="btn" href="https://www.instagram.com/bodyzipped" target="_blank" rel="noopener">
-          <span class="icon" aria-hidden="true">
-            <img src="https://bio.linkcdn.cc/bio/links/icons/social/instagram.png" alt="" />
-          </span>
-          <span class="text">
-            <p class="title">Instagram</p>
-            <p class="meta">instagram.com/bodyzipped</p>
-          </span>
-          <span class="chev" aria-hidden="true">›</span>
-        </a>
+<a class="link" href="https://open.spotify.com/album/7kgoSlLU73BpahpQ39q5Bu?si=CU6qPWj8SHip9NU3v2pwPQ" target="_blank">spotify</a>
 
-        <!-- Genius Lyrics -->
-        <a class="btn" href="https://www.google.com/amp/s/genius.com/amp/Aysea7-love-is-something-that-just-never-works-properly-lyrics" target="_blank" rel="noopener">
-          <span class="icon" aria-hidden="true">
-            <img src="https://bio.linkcdn.cc/20201107/08443711799" alt="" />
-          </span>
-          <span class="text">
-            <p class="title">Genius Lyrics</p>
-            <p class="meta">genius.com — Love Is Something…</p>
-          </span>
-          <span class="chev" aria-hidden="true">›</span>
-        </a>
+<a class="link" href="https://soundcloud.com/aysea7?ref=clipboard&p=a&c=1" target="_blank">soundcloud</a>
 
-        <div class="footer">
-          © <span id="year"></span> aysea7 · <a href="https://aysea7.com">aysea7.com</a>
-        </div>
-      </div>
-    </section>
-  </main>
+<a class="link" href="https://www.youtube.com/channel/UCrTgGOqtcq4HHlzxFR8wWcw" target="_blank">youtube</a>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<a class="link" href="https://www.deezer.com/album/144393102" target="_blank">deezer</a>
+
+<a class="link" href="https://itunes.apple.com/album/id1506802597" target="_blank">apple music</a>
+
+<a class="link" href="https://www.instagram.com/bodyzipped" target="_blank">instagram</a>
+
+<a class="link" href="https://t.me/joinchat/sFyzrAjLVXgwNmJi" target="_blank">telegram</a>
+
+<a class="link" href="https://www.google.com/amp/s/genius.com/amp/Aysea7-love-is-something-that-just-never-works-properly-lyrics" target="_blank">genius</a>
+
+</section>
+
+<footer class="footer">
+
+<div class="copyright">
+© <span id="year"></span> aysea7 — andrii chubok
+</div>
+
+</footer>
+
+</main>
+
+<script src="/static/assets/javascript/base.js"></script>
+
+</div>
 </body>
 </html>
