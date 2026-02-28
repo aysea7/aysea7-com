@@ -1,0 +1,82 @@
+AYSEA7 WEBSITE SOURCE CODE LICENSE
+Version 1.0
+Last updated: 2026
+
+Copyright (c) 2026 Andrii Chubok.
+All Rights Reserved.
+
+1. DEFINITIONS
+
+"Author" refers to Andrii Chubok, the sole copyright holder of the source code
+contained within this repository.
+
+"Source Code" refers to all files contained within this repository, including
+but not limited to HTML, CSS, JavaScript, assets, configuration files,
+documentation, and any other materials distributed through this repository.
+
+"User" refers to any individual or entity that accesses, views, downloads, or
+otherwise interacts with the Source Code.
+
+2. OWNERSHIP
+
+All rights, title, and interest in and to the Source Code remain the exclusive
+property of the Author. The Source Code is protected under applicable
+copyright laws and international copyright treaties.
+
+No transfer of ownership or intellectual property rights is granted under
+this license.
+
+3. PERMITTED USE
+
+Users are granted a limited, non-exclusive, non-transferable permission to:
+
+• Access and view the Source Code through GitHub or other repository mirrors
+• Download the Source Code solely for the purpose of personal inspection
+
+This permission does not constitute a license to use, reproduce, or distribute
+the Source Code.
+
+4. PROHIBITED USE
+
+Without prior written permission from the Author, Users may NOT:
+
+• Copy or reproduce the Source Code in whole or in part
+• Modify or create derivative works based on the Source Code
+• Redistribute the Source Code or any modified versions
+• Use the Source Code for commercial or non-commercial projects
+• Republish the Source Code on other repositories, websites, or platforms
+• Use the Source Code as a template, framework, or starting point for other
+  websites or software
+
+Any such actions are strictly prohibited.
+
+5. NO OPEN SOURCE LICENSE
+
+The Source Code is NOT licensed under any open-source license.
+
+The availability of the Source Code in a public repository does not grant any
+rights beyond those explicitly stated in this document.
+
+6. ENFORCEMENT
+
+Any unauthorized use of the Source Code constitutes copyright infringement and
+may result in legal action to the fullest extent permitted by law.
+
+The Author reserves the right to revoke viewing permissions or request removal
+of unauthorized copies at any time.
+
+7. DISCLAIMER
+
+The Source Code is provided "as is" without warranties of any kind, express or
+implied. The Author shall not be liable for any damages arising from access to
+or use of the Source Code.
+
+8. CONTACT
+
+For licensing inquiries or permission requests, contact:
+
+Andrii Chubok
+Email: andrii.chubok@gmail.com
+
+By accessing or downloading this Source Code, you acknowledge that you have
+read, understood, and agreed to the terms outlined in this document.
